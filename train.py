@@ -106,7 +106,7 @@ def train(train_loader, dev_loader, model, args):
             scheduler.step()
         for i_batch, data in enumerate(train_loader, start=start_iter):
             inputs, target = data          
-            target.sub_(1)
+            # target.sub_(1)
         
             if args.cuda:
                 inputs, target = inputs.cuda(), target.cuda()
@@ -172,7 +172,7 @@ def eval(data_loader, model, epoch_train, batch_train, optimizer, args):
     predicates_all, target_all = [], []
     for i_batch, (data) in enumerate(data_loader):
         inputs, target = data
-        target.sub_(1)
+        # target.sub_(1)
         
         size += len(target)
         if args.cuda:
