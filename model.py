@@ -52,7 +52,7 @@ class  CharCNN(nn.Module):
             nn.Dropout(p=args.dropout)
         )
 
-        self.fc3 = nn.Linear(1024, 4)
+        self.fc3 = nn.Linear(1024, 12)
         self.log_softmax = nn.LogSoftmax()
 
     def forward(self, x):
